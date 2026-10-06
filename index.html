@@ -105,6 +105,10 @@ form{background:#fff;border:1px solid #D5DDD8;border-radius:3px;padding:24px}
 label{display:block;font-weight:500;margin-bottom:14px}
 input,select,textarea{width:100%;margin-top:6px;padding:11px 12px;border:1px solid #8E9E97;border-radius:3px;font:inherit;background:#fff;color:var(--text)}
 textarea{min-height:110px;resize:vertical}
+#st{margin-top:14px;font-weight:500}
+#st.ok{color:#1d6b3f}
+#st.er{color:#a12727}
+.hp{position:absolute;left:-9999px}
 @media(max-width:800px){.cg{grid-template-columns:1fr;gap:28px}}
 
 footer{background:var(--ink);color:var(--sage);padding:32px 0;font-size:.9rem}
@@ -235,6 +239,7 @@ footer p{max-width:70ch}
    <form id="cf">
     <label>Nombre<input name="nombre" required autocomplete="name"></label>
     <label>Teléfono<input name="telefono" type="tel" required autocomplete="tel"></label>
+    <label>Correo (opcional)<input name="email" type="email" autocomplete="email"></label>
     <label>Tema de su consulta
      <select name="area" id="area">
       <option>No estoy seguro</option><option>Litigios y representación judicial</option><option>Derecho civil</option><option>Derecho laboral</option><option>Derecho de familia</option><option>Derecho administrativo</option><option>Derecho agrario</option><option>Derecho inmobiliario y de tierras</option><option>Contratos</option><option>Cobro de obligaciones</option><option>Consultoría y asesoría jurídica</option><option>Tengo un proceso judicial</option>
@@ -242,9 +247,11 @@ footer p{max-width:70ch}
     </label>
     <label>Mensaje<textarea name="mensaje" required></textarea></label>
     <div class="btns">
-     <button class="b b3" type="submit">Enviar por correo</button>
+     <button class="b b3" type="submit" id="bs">Enviar mensaje</button>
      <button class="b b4" type="button" id="bwa">Enviar por WhatsApp</button>
     </div>
+    <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p id="st" role="status" aria-live="polite"></p>
    </form>
   </div>
  </div>
@@ -265,7 +272,8 @@ var C={
   whatsapp:'573160408942',               /* solo números, con indicativo de país */
   telefono:'+57 3160408942',
   correo:'abogadoscardenasramirez@gmail.com',
-  direccion:'Manzana 5, casa # 44 barrió pastoral 2, Lerida Tolima'
+  direccion:'Manzana 5, casa # 44 barrió pastoral 2, Lerida Tolima',
+  web3formsKey:'c4a144be-93d2-4da8-84fa-8dc0fa7ab150'   /* clave de web3forms.com */
 };
 /* =========================================== */
 function wa(t){return 'https://wa.me/'+C.whatsapp+'?text='+encodeURIComponent(t)}
@@ -291,7 +299,23 @@ function texto(){
 }
 f.onsubmit=function(e){
   e.preventDefault();
-  location.href='mailto:'+C.correo+'?subject='+encodeURIComponent('Solicitud de asesoría')+'&body='+encodeURIComponent(texto());
+  var d=new FormData(f),st=document.getElementById('st'),bs=document.getElementById('bs');
+  if(d.get('botcheck'))return;
+  if(!C.web3formsKey||C.web3formsKey.indexOf('PEGUE')===0){
+    location.href='mailto:'+C.correo+'?subject='+encodeURIComponent('Solicitud de asesoría')+'&body='+encodeURIComponent(texto());
+    return;
+  }
+  var data={access_key:C.web3formsKey,subject:'Nueva solicitud de asesoría - Abogados Cárdenas',from_name:'Sitio web Abogados Cárdenas',name:d.get('nombre'),telefono:d.get('telefono'),tema:d.get('area'),message:d.get('mensaje'),botcheck:false};
+  if(d.get('email'))data.email=d.get('email');
+  bs.disabled=true;bs.textContent='Enviando…';st.className='';st.textContent='';
+  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)})
+  .then(function(r){return r.json()})
+  .then(function(j){
+    if(!j.success)throw new Error(j.message);
+    f.reset();st.className='ok';st.textContent='¡Mensaje enviado! Nos pondremos en contacto con usted pronto.';
+  })
+  .catch(function(){st.className='er';st.textContent='No pudimos enviar su mensaje. Intente de nuevo o escríbanos por WhatsApp.'})
+  .then(function(){bs.disabled=false;bs.textContent='Enviar mensaje'});
 };
 document.getElementById('bwa').onclick=function(){
   if(f.reportValidity())window.open(wa('Hola, quisiera una asesoría.\n\n'+texto()),'_blank','noopener');
