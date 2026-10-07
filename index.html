@@ -111,9 +111,11 @@ textarea{min-height:110px;resize:vertical}
 .hp{position:absolute;left:-9999px}
 @media(max-width:800px){.cg{grid-template-columns:1fr;gap:28px}}
 
-footer{background:var(--ink);color:var(--sage);padding:32px 0;font-size:.9rem}
+footer{background:var(--ink);color:var(--sage);padding:32px 0 88px;font-size:.9rem}
 footer p{max-width:70ch}
-.fw{position:fixed;right:16px;bottom:16px;z-index:9;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.fw{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:9;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.fw:hover{background:#1EBE5A}
+.fw svg{width:34px;height:34px;fill:#fff}
 </style>
 </head>
 <body>
@@ -152,7 +154,7 @@ footer p{max-width:70ch}
    <div><h3>Derecho civil</h3><p>Procesos de pertenencia, procesos reivindicatorios o acciones de dominio, conflictos relacionados con la propiedad entre particulares y procesos divisorios.</p></div>
    <div><h3>Derecho laboral</h3><p>Asesoría y representación en casos de despido sin justa causa, prestaciones sociales, salarios adeudados y relaciones laborales, tanto para trabajadores como para empleadores.
             Reconocimiento de pensiones de sobrevivientes y pensiones de vejez.</p></div>
-   <div><h3>Derecho de familia</h3><p>Divorcios, suceciones, impugnación de paternidad, proceso de filiación, declaración de union marital de echo, custodia, alimentos, Regulación de visitas y liquidación de sociedad conyugal o patrimonial.
+   <div><h3>Derecho de familia</h3><p>Divorcios, sucesiones, impugnación de paternidad, proceso de filiación, declaración de unión marital de hecho, custodia, alimentos, regulación de visitas y liquidación de sociedad conyugal o patrimonial.
    </p></div>
    <div><h3>Derecho administrativo</h3><p>Reclamaciones y litigios frente a entidades del Estado.</p></div>
    <div><h3>Derecho agrario</h3><p>Predios rurales, contratos agrarios y conflictos sobre el uso de la tierra.</p></div>
@@ -283,10 +285,10 @@ var C={
 /* =========================================== */
 function wa(t){return 'https://wa.me/'+C.whatsapp+'?text='+encodeURIComponent(t)}
 document.querySelectorAll('[data-wa]').forEach(function(a){a.href=wa(a.dataset.wa)});
-document.querySelectorAll('[data-f]').forEach(function(a){a.textContent=C[a.dataset.f]});
+document.querySelectorAll('[data-f]').forEach(function(a){if(C[a.dataset.f])a.textContent=C[a.dataset.f];else a.parentNode.style.display='none'});
 document.querySelector('[data-tel]').href='tel:'+C.telefono.replace(/\s/g,'');
 document.querySelector('[data-mail]').href='mailto:'+C.correo;
-document.querySelector('[data-map]').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(C.direccion);
+if(C.direccion)document.querySelector('[data-map]').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(C.direccion);
 document.getElementById('y').textContent=new Date().getFullYear();
 
 var mb=document.getElementById('mb'),nav=document.getElementById('nav');
