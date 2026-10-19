@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abogados Cárdenas | Asesoría y representación jurídica</title>
 <meta name="description" content="Abogados Cárdenas: litigios, derecho civil, laboral, familia, administrativo, agrario, inmobiliario, contratos y cobro de obligaciones.">
+
 <link rel="icon" href="logo.ico">
- <!--<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2317302A'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23D9B76A' font-family='Georgia'%3EC%3C/text%3E%3C/svg%3E">-->
+
+<!--<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2317302A'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23D9B76A' font-family='Georgia'%3EC%3C/text%3E%3C/svg%3E">-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -112,11 +114,37 @@ textarea{min-height:110px;resize:vertical}
 .hp{position:absolute;left:-9999px}
 @media(max-width:800px){.cg{grid-template-columns:1fr;gap:28px}}
 
-footer{background:var(--ink);color:var(--sage);padding:32px 0 88px;font-size:.9rem}
+footer{background:var(--ink);color:var(--sage);padding:32px 0 150px;font-size:.9rem}
 footer p{max-width:70ch}
 .fw{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:9;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.3)}
 .fw:hover{background:#1EBE5A}
 .fw svg{width:34px;height:34px;fill:#fff}
+.cbb{position:fixed;right:18px;bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:9;width:58px;height:58px;padding:0;border-radius:50%;border:2px solid var(--gold);background:var(--ink);cursor:pointer;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.cbb:hover{transform:scale(1.05)}
+.cbb img{display:block;width:100%;height:100%}
+.cb{position:fixed;right:18px;bottom:calc(158px + env(safe-area-inset-bottom,0px));z-index:12;width:380px;max-width:calc(100vw - 24px);height:min(580px,calc(100vh - 180px));background:#fff;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden}
+.cb[hidden]{display:none}
+.cbh{background:var(--ink);color:#fff;display:flex;align-items:center;gap:11px;padding:10px 14px;border-bottom:3px solid var(--gold)}
+.cbh img{height:40px;width:40px;border-radius:50%}
+.cbh div{flex:1;line-height:1.25}.cbh b{font-family:'Newsreader',Georgia,serif;font-size:1.1rem}.cbh small{display:block;color:var(--sage)}
+.cbh button{background:none;border:0;color:#fff;font-size:1.7rem;line-height:1;cursor:pointer;padding:0 4px}
+.cbm{flex:1;overflow-y:auto;padding:14px;background:var(--bone);display:flex;flex-direction:column;gap:10px}
+.m{max-width:90%;padding:10px 14px;border-radius:12px;font-size:.93rem;line-height:1.5;white-space:pre-line}
+.m.bt{background:#fff;border:1px solid #DCE1DE;align-self:flex-start;border-bottom-left-radius:3px}
+.m.us{background:var(--ink);color:#fff;align-self:flex-end;border-bottom-right-radius:3px}
+.m>b{display:block;font:600 1.05rem 'Newsreader',Georgia,serif;color:var(--ink)}
+.m a.b{display:block;width:max-content;max-width:100%;margin-top:8px;padding:8px 14px;font-size:.88rem;white-space:normal}
+.m .ob{display:block;width:100%;text-align:left;margin-top:6px;padding:8px 12px;border:1px solid var(--ink);background:#fff;color:var(--ink);border-radius:8px;font:500 .88rem 'Public Sans',sans-serif;cursor:pointer}
+.m .ob:hover{background:var(--sage)}
+.cbq{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 4px;background:var(--bone);border-top:1px solid #E1E5E2}
+.cbq:empty{display:none}
+.cbq button{border:1px solid var(--ink);background:#fff;color:var(--ink);border-radius:99px;padding:5px 12px;font:500 .84rem 'Public Sans',sans-serif;cursor:pointer}
+.cbq button:hover{background:var(--sage)}
+.cbf{display:flex;gap:8px;padding:10px 12px;border-top:1px solid #E1E5E2}
+.cbf input{flex:1;min-width:0;padding:9px 14px;border:1px solid #8E9E97;border-radius:99px;font:inherit}
+.cbf button{border:0;background:var(--ink);color:#fff;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:1rem}
+.cbn{margin:0;padding:0 12px 8px;font-size:.7rem;line-height:1.3;color:var(--muted);text-align:center}
+@media(max-width:520px){.cb{left:8px;right:8px;width:auto;max-width:none}}
 </style>
 </head>
 <body>
@@ -274,6 +302,14 @@ footer p{max-width:70ch}
 
 <a class="fw" data-wa="Hola, quisiera solicitar una asesoría jurídica." href="#" target="_blank" rel="noopener" aria-label="Escríbanos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
 
+<button id="cbb" class="cbb" type="button" aria-label="Abrir chat con Cárdenas Legal IA" aria-expanded="false" aria-controls="cb"><img src="chat-avatar.png" alt=""></button>
+<div id="cb" class="cb" role="dialog" aria-label="Cárdenas Legal IA, asistente jurídico virtual" hidden>
+ <div class="cbh"><img src="chat-avatar.png" alt=""><div><b>Cárdenas Legal IA</b><small>Asistente Jurídico Virtual</small></div><button id="cbx" type="button" aria-label="Cerrar chat">&times;</button></div>
+ <div class="cbm" id="cbm" aria-live="polite"></div>
+ <div class="cbq" id="cbq"></div>
+ <form class="cbf" id="cbf"><input id="cbi" placeholder="Describa brevemente su situación…" autocomplete="off" maxlength="300" aria-label="Su mensaje"><button type="submit" aria-label="Enviar">&#10148;</button></form>
+ <p class="cbn">La información proporcionada por este asistente es de carácter general y no sustituye la asesoría personalizada de un abogado.</p>
+</div>
 <script>
 /* ===== EDITE AQUÍ SUS DATOS DE CONTACTO ===== */
 var C={
@@ -281,7 +317,8 @@ var C={
   telefono:'+57 3019007188',
   correo:'abogadoscardenasramirez@gmail.com',
   /*direccion:'Manzana 5, casa # 44 barrió pastoral 2, Lerida Tolima',*/
-  web3formsKey:'c4a144be-93d2-4da8-84fa-8dc0fa7ab150'   /* clave de web3forms.com */
+  web3formsKey:'c4a144be-93d2-4da8-84fa-8dc0fa7ab150'   /* clave de web3forms.com */,
+  iaEndpoint:''   /* opcional: dirección del servicio de IA (ver worker.js) */
 };
 /* =========================================== */
 function wa(t){return 'https://wa.me/'+C.whatsapp+'?text='+encodeURIComponent(t)}
@@ -328,6 +365,152 @@ f.onsubmit=function(e){
 document.getElementById('bwa').onclick=function(){
   if(f.reportValidity())window.open(wa('Hola, quisiera una asesoría.\n\n'+texto()),'_blank','noopener');
 };
+
+/* ===== Cárdenas Legal IA: asistente jurídico virtual ===== */
+(function(){
+var g=function(i){return document.getElementById(i)},B=g('cbb'),P=g('cb'),M=g('cbm'),Q=g('cbq'),F=g('cbf'),I=g('cbi');
+var norm=function(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')};
+var S={step:null,d:{},ini:false,hist:[]};
+var URG=['detenid','captur','urgente','hoy mismo','vence manana','audiencia manana','desalojo','embargo','lanzamiento','preso'];
+var AR=[
+ {n:'Derecho civil',k:['civil','herencia','sucesion','responsabilidad','indemniz','contrato','incumpl','redactar'],i:'En derecho civil atendemos responsabilidad, sucesiones, propiedad, contratos y conflictos entre particulares.'},
+ {n:'Derecho de familia',k:['familia','divorci','custodi','alimentos','visitas','union marital','conyugal','separacion','hijos'],i:'En derecho de familia atendemos divorcios, custodia, alimentos, regulación de visitas, unión marital de hecho y liquidación de sociedad conyugal.'},
+ {n:'Derecho laboral',k:['laboral','despid','trabajo','salario','prestacion','liquidacion','empleador','trabajador','sueldo'],i:'En derecho laboral atendemos despidos, pago de salarios y prestaciones, y relaciones entre trabajadores y empleadores.'},
+ {n:'Derecho penal',k:['penal','denuncia','fiscalia','detenid','captur','delito','estafa','hurto','lesiones','imputacion','carcel','preso','querella','amenaza'],i:'En derecho penal brindamos orientación y representación en denuncias, investigaciones y procesos penales. Estos asuntos suelen tener plazos urgentes.'},
+ {n:'Derecho administrativo y constitucional',k:['administrativ','entidad','alcaldia','gobernacion','ministerio','nulidad','tutela','constitucional','derecho de peticion','accion popular'],i:'En derecho administrativo atendemos reclamaciones y litigios frente a entidades del Estado, y orientamos en acciones constitucionales como la tutela y el derecho de petición.'},
+ {n:'Derecho comercial y empresarial',k:['comercial','empresa','sociedad','socios','constituir','mercantil','camara de comercio','pagare','cartera','cobro','cobrar','factura','deuda','me debe','me adeuda'],i:'En derecho comercial y empresarial atendemos asesoría a empresas y sociedades, contratos comerciales y cobro de obligaciones, pagarés y facturas.'},
+ {n:'Derecho inmobiliario',k:['inmobiliario','inmueble','tierra','compraventa','titulacion','linderos','posesion','escritura','terreno','lote','vivienda','apartamento','arriendo','predio','hipoteca','agrario','finca','parcela'],i:'En derecho inmobiliario atendemos compraventas, titulación, linderos, posesión, estudio de títulos y asuntos agrarios y de tierras.'},
+ {n:'Otras consultas jurídicas',k:['otras consultas','proceso','radicado','expediente','seguimiento','litigio','demanda','juzgado'],i:'Cuéntenos brevemente su situación para identificar el área y orientarle sobre el siguiente paso. Si ya tiene un proceso judicial, también le orientamos en su revisión, seguimiento y gestión.'}
+];
+function add(t,cls,acts,hd){
+  var d=document.createElement('div');d.className='m '+cls;
+  if(hd){var h=document.createElement('b');h.textContent=hd;d.appendChild(h)}
+  d.appendChild(document.createTextNode(t));
+  (acts||[]).forEach(function(a){
+    var l=document.createElement(a.h?'a':'button');l.textContent=a.t;
+    if(a.h){l.className='b b3';l.href=a.h;if(a.h.indexOf('http')===0){l.target='_blank';l.rel='noopener'}else if(a.h.charAt(0)==='#')l.onclick=function(){abrir(false)}}
+    else{l.className='ob';l.type='button';l.onclick=function(){elegir(a.i)}}
+    d.appendChild(l);
+  });
+  M.appendChild(d);M.scrollTop=M.scrollHeight;return d;
+}
+function chips(c){
+  Q.innerHTML='';
+  (c||[]).forEach(function(t){var b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=function(){say(t)};Q.appendChild(b)});
+}
+function bot(t,a,c,hd){setTimeout(function(){add(t,'bt',a,hd);S.hist.push({role:'assistant',content:t});chips(c)},400)}
+function opts(){return AR.map(function(a,i){return{t:(i+1)+'. '+a.n,i:i}})}
+function waBtn(txt){return{t:'Hablar con un abogado por WhatsApp',h:wa(txt||resumen())}}
+function resumen(){
+  var d=S.d,p=['Hola, '+(d.nombre?'soy '+d.nombre+'. ':'')+'quisiera asesoría jurídica.'];
+  if(d.area)p.push('Área: '+d.area+'.');if(d.descripcion)p.push('Situación: '+d.descripcion);
+  if(d.telefono)p.push('Teléfono: '+d.telefono+'.');if(d.cita)p.push('Cita preferida: '+d.cita+'.');
+  return p.join(' ');
+}
+function urg(n){return URG.some(function(k){return n.indexOf(k)>-1})}
+function buscar(n){var b=null,s=0;AR.forEach(function(e){var c=e.k.filter(function(k){return n.indexOf(k)>-1}).length;if(c>s){s=c;b=e}});return b}
+function menu(){bot('¿En qué asunto legal podemos ayudarle? Seleccione una opción o describa brevemente su situación.',opts(),[])}
+
+/* 1 y 2: identificar la consulta y orientar sobre el área */
+function orientar(a,t){
+  S.d.area=a.n;var n=norm(t||'');
+  if(t&&!/^[1-8]$/.test(t.trim())&&!S.d.descripcion&&t.length>12)S.d.descripcion=t;
+  var u=urg(n);if(u)S.d.urgente=true;
+  var acts=u?[waBtn(),{t:'Llamar al despacho',h:'tel:'+C.telefono.replace(/[^\d+]/g,'')}]:[waBtn()];
+  bot(a.i+(u?'\n\nPor la naturaleza de su consulta, le recomiendo comunicarse de inmediato con el despacho.':'')+'\n\nPara que un abogado revise su situación, puedo registrar su consulta y gestionar una cita. ¿Desea continuar?',acts,['Sí, registrar mi consulta','Ver otras áreas'],a.n);
+}
+function elegir(i){add(AR[i].n,'us');Q.innerHTML='';S.hist.push({role:'user',content:AR[i].n});orientar(AR[i],'')}
+
+/* 3 y 4: recopilar datos básicos y gestionar la cita */
+function iniciar(){
+  S.step=S.d.descripcion?'nombre':'desc';
+  bot('Con gusto. Solicitaré únicamente los datos necesarios para contactarle.\n\n'+(S.d.descripcion?'¿Cuál es su nombre completo?':'Describa brevemente su situación: qué ocurrió y qué necesita.'),null,['Cancelar']);
+}
+function paso(t){
+  var d=S.d,n=norm(t).trim();
+  if(n==='cancelar'){S.step=null;S.d={};return bot('Entendido, cancelé el registro. ¿Desea consultar otro asunto?',null,['Ver otras áreas'])}
+  if(S.step==='desc'){
+    if(t.length<10)return bot('¿Puede darme un poco más de detalle? Una o dos frases son suficientes.',null,['Cancelar']);
+    d.descripcion=t;var a=buscar(n);if(!d.area)d.area=a?a.n:'Otras consultas jurídicas';if(urg(n))d.urgente=true;
+    S.step='nombre';return bot('Gracias. ¿Cuál es su nombre completo?',null,['Cancelar']);
+  }
+  if(S.step==='nombre'){
+    if(t.length<3)return bot('Por favor escriba su nombre completo.',null,['Cancelar']);
+    d.nombre=t;S.step='tel';return bot('Mucho gusto, '+t.split(' ')[0]+'. ¿A qué número de teléfono o WhatsApp podemos contactarle?',null,['Cancelar']);
+  }
+  if(S.step==='tel'){
+    if(t.replace(/\D/g,'').length<7)return bot('El número no parece válido. Escríbalo con todos sus dígitos, por ejemplo 300 123 4567.',null,['Cancelar']);
+    d.telefono=t;S.step='correo';return bot('¿Desea dejarnos un correo electrónico? (opcional)',null,['Omitir']);
+  }
+  if(S.step==='correo'){
+    if(n==='omitir')d.correo='';else if(/^\S+@\S+\.\S+$/.test(t))d.correo=t;else return bot('Ese correo no parece válido. Escríbalo de nuevo o pulse «Omitir».',null,['Omitir']);
+    S.step='cita';return bot('¿Qué día y franja horaria prefiere para la cita o llamada? Por ejemplo: «martes en la tarde».',null,['Lo antes posible','Mañana','Tarde']);
+  }
+  if(S.step==='cita'){
+    d.cita=t;S.step='auth';
+    return bot('Para finalizar necesito su autorización.\n\n¿Autoriza a Abogados Cárdenas Ramírez a tratar los datos personales suministrados con el único fin de contactarle y gestionar su consulta (Ley 1581 de 2012)?',null,['Sí, autorizo','No autorizo']);
+  }
+  if(S.step==='auth'){
+    if(/^si\b/.test(n)||/^autorizo/.test(n))return enviar();
+    S.step=null;S.d={};return bot('Entendido, no registraré sus datos. Si lo prefiere, puede comunicarse directamente con el despacho.',[waBtn('Hola, quisiera una asesoría jurídica.')],['Ver otras áreas']);
+  }
+}
+/* 5: transferir la consulta al despacho */
+function enviar(){
+  var d=S.d,res=resumen(),nom=(d.nombre||'').split(' ')[0];S.step=null;S.d={};
+  var wl=[{t:'Enviar también por WhatsApp',h:wa(res)}];
+  var ok=function(){bot('Gracias, '+nom+'. Su consulta quedó registrada y un abogado se comunicará con usted para continuar la atención'+(d.cita?' y coordinar la cita ('+d.cita+')':'')+'.\n\nSi su asunto es urgente, puede escribirnos de inmediato por WhatsApp.',wl,['Nueva consulta'])};
+  var fail=function(){bot('No pude enviar su solicitud automáticamente. Por favor envíela por WhatsApp con el botón de abajo; ya incluye sus datos.',wl,['Nueva consulta'])};
+  if(!C.web3formsKey||C.web3formsKey.indexOf('PEGUE')===0)return fail();
+  var data={access_key:C.web3formsKey,subject:'Nueva consulta desde Cárdenas Legal IA'+(d.urgente?' (URGENTE)':''),from_name:'Cárdenas Legal IA',name:d.nombre,telefono:d.telefono,area:d.area,descripcion:d.descripcion,cita_preferida:d.cita,urgente:d.urgente?'Sí':'No',autorizacion_datos:'Sí, autoriza el tratamiento de datos',botcheck:false};
+  if(d.correo)data.email=d.correo;
+  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)})
+   .then(function(r){return r.json()}).then(function(j){j.success?ok():fail()}).catch(fail);
+}
+
+/* Mensajes libres: reglas primero; IA solo si hay un servicio configurado */
+function ia(t){
+  var w=add('Escribiendo…','bt');
+  fetch(C.iaEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:S.hist.slice(-12)})})
+   .then(function(r){return r.json()}).then(function(j){
+     if(!j.reply)throw 0;w.textContent=j.reply;S.hist.push({role:'assistant',content:j.reply});M.scrollTop=M.scrollHeight;chips(['Sí, registrar mi consulta','Ver otras áreas']);
+   }).catch(function(){w.remove();sinArea(t)});
+}
+function sinArea(t){bot('No logré identificar el área de su consulta. ¿Puede describirla con un poco más de detalle o elegir una opción?',opts().concat([waBtn('Hola, tengo una consulta: '+t)]),[])}
+var CMD={};
+CMD[norm('Sí, registrar mi consulta')]=iniciar;CMD[norm('Ver otras áreas')]=menu;
+CMD[norm('Nueva consulta')]=function(){S.step=null;S.d={};menu()};
+function say(t){
+  add(t,'us');Q.innerHTML='';S.hist.push({role:'user',content:t});
+  if(S.step)return paso(t);
+  var n=norm(t).trim();
+  if(CMD[n])return CMD[n]();
+  var a=/^[1-8]$/.test(n)?AR[+n-1]:buscar(n);
+  if(a)return orientar(a,t);
+  if(/^(hola|buenas|buenos dias)/.test(n))return bot('¡Hola! ¿En qué asunto legal podemos ayudarle?',opts(),[]);
+  if(/gracias/.test(n))return bot('Con gusto. Si necesita algo más, aquí estoy.',null,['Nueva consulta']);
+  if(/cita|agendar|asesoria|contactar|que me llamen/.test(n)){S.d.area=S.d.area||'Por definir';return iniciar()}
+  if(/telefono|correo|contacto|direccion|ubicacion|horario|donde/.test(n))return bot('Puede comunicarse con el despacho por WhatsApp o teléfono al '+C.telefono+', o por correo a '+C.correo+'. Para la ubicación y el horario, escríbanos por WhatsApp.',[waBtn('Hola, quisiera información sobre ubicación y horario de atención.')],['Sí, registrar mi consulta']);
+  if(/whatsapp|humano|abogado|persona/.test(n))return bot('Con gusto. Un abogado puede atenderle por WhatsApp.',[waBtn()],['Sí, registrar mi consulta']);
+  if(C.iaEndpoint)return ia(t);
+  sinArea(t);
+}
+function abrir(o){
+  P.hidden=!o;B.setAttribute('aria-expanded',o);
+  if(o){
+    if(!S.ini){S.ini=true;
+      add('Asistente Jurídico Virtual\n\nBienvenido a Abogados Cárdenas Ramírez.\n\nEs un gusto atenderle. Estoy aquí para brindarle información sobre nuestros servicios jurídicos y orientarle sobre el área del derecho relacionada con su consulta.\n\n¿En qué asunto legal podemos ayudarle?','bt',opts(),'⚖️ Cárdenas Legal IA');
+      add('Puede seleccionar una opción o describirme brevemente su situación.\n\nNuestro propósito es ayudarle a identificar el siguiente paso para recibir atención jurídica.','bt');
+      M.scrollTop=0;
+    }
+    I.focus();
+  }
+}
+B.onclick=function(){abrir(P.hidden)};
+g('cbx').onclick=function(){abrir(false);B.focus()};
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!P.hidden)abrir(false)});
+F.onsubmit=function(e){e.preventDefault();var t=I.value.trim();if(t){I.value='';say(t)}};
+})();
 </script>
 </body>
 </html>
